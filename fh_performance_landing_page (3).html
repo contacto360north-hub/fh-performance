@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FH Performance | Mecánica Automotriz & Maquinaria Vial</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#DC2626',
+                            redDark: '#991B1B',
+                            redLight: '#EF4444',
+                            black: '#0a0a0a',
+                            darkCard: '#141414',
+                            darkBorder: '#262626',
+                            silver: '#D1D5DB',
+                            silverLight: '#F3F4F6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080808;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom Carbon Fiber / Racing Texture Background */
+        .bg-carbon {
+            background-color: #0b0b0b;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+                linear-gradient(0deg, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.95)),
+                repeating-linear-gradient(45deg, #111 0, #111 2px, #0a0a0a 0, #0a0a0a 10px);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            border-color: #dc2626;
+            box-shadow: 0 12px 30px -10px rgba(220, 38, 38, 0.25);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0d0d0d;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dc2626;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar overflow-x-hidden">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-red-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 shadow-md z-50 relative">
+        <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
+        <span>Atención Integral en Moreno: Autos, Camionetas, Camiones y Maquinaria Vial (Todas las Marcas y Series)</span>
+        <a href="#contacto" class="underline hover:text-gray-200 ml-2 font-semibold">Consulte Ahora</a>
+    </div>
+
+    <!-- MAIN STICKY NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- LOGO SVG RECREATION -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative flex items-center justify-center">
+                        <svg class="w-12 h-12 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 40H60V80H110V40H145V160H110V115H60V160H25V40Z" fill="url(#silverGradient)"/>
+                            <path d="M150 30 C160 30, 175 40, 178 55 L165 60 C163 53, 155 48, 148 48 L150 30 Z" fill="#DC2626"/>
+                            <path d="M165 40 L180 35 L185 48 L172 52 Z" fill="#DC2626"/>
+                            <path d="M178 58 L192 60 L188 74 L175 68 Z" fill="#DC2626"/>
+                            <path d="M180 78 L194 85 L185 98 L173 88 Z" fill="#DC2626"/>
+                            <circle cx="150" cy="70" r="32" stroke="#DC2626" stroke-width="14" stroke-dasharray="12 6" fill="none"/>
+                            <defs>
+                                <linearGradient id="silverGradient" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#FFFFFF"/>
+                                    <stop offset="50%" stop-color="#9CA3AF"/>
+                                    <stop offset="100%" stop-color="#4B5563"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-1 leading-none">
+                            <span class="font-heading font-black text-2xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">FH</span>
+                            <span class="font-heading font-extrabold text-xl tracking-wider text-red-600 ml-1">PERFORMANCE</span>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-gray-400 uppercase">Mecánica Automotriz</span>
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAV LINKS -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+                    <a href="#inicio" class="text-white hover:text-red-500 transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-gray-300 hover:text-red-500 transition-colors">Quiénes Somos</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-red-500 transition-colors">Servicios</a>
+                    <a href="#guia-tecnica" class="text-gray-300 hover:text-red-500 transition-colors">Tips & Mantenimiento</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-red-500 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- HEADER ACTION BUTTONS -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://instagram.com/rivadeoperfomance" target="_blank" rel="noopener" 
+                       class="flex items-center gap-2 bg-neutral-900 border border-neutral-700 hover:border-pink-600 hover:text-pink-500 text-gray-200 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all duration-300">
+                        <i class="fab fa-instagram text-lg text-pink-500"></i>
+                        <span class="hidden md:inline">@rivadeoperfomance</span>
+                    </a>
+                    <div class="relative group">
+                        <button class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-red-600/30 transition-all duration-300">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span>WhatsApp (2 Números)</span>
+                            <i class="fas fa-chevron-down text-xs opacity-75"></i>
+                        </button>
+                        <!-- Dropdown choice for 2 Numbers -->
+                        <div class="absolute right-0 mt-2 w-64 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl p-2 hidden group-hover:block transition-all z-50">
+                            <a href="https://wa.me/5491144720639?text=Hola!%20Consulta%20por%20L%C3%ADnea%20Liviana%20(Celular%201)" 
+                               target="_blank" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-neutral-800 text-xs text-gray-200 hover:text-white">
+                                <div class="w-8 h-8 rounded-full bg-emerald-950 text-emerald-400 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-emerald-400">Celular 1: +54 9 11 4472-0639</div>
+                                    <div class="text-[10px] text-gray-400">Línea Liviana & Turnos</div>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/5491122845098?text=Hola!%20Consulta%20por%20L%C3%ADnea%20Pesada%20(Celular%202)" 
+                               target="_blank" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-neutral-800 text-xs text-gray-200 hover:text-white mt-1 border-t border-neutral-800/80 pt-2">
+                                <div class="w-8 h-8 rounded-full bg-amber-950 text-amber-400 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fas fa-truck-monster"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-amber-400">Celular 2: +54 9 11 2284-5098</div>
+                                    <div class="text-[10px] text-gray-400">Línea Pesada & Maquinaria</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-neutral-950 border-b border-neutral-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="block text-gray-200 font-medium py-2 border-b border-neutral-800">Inicio</a>
+            <a href="#nosotros" class="block text-gray-200 font-medium py-2 border-b border-neutral-800">Quiénes Somos</a>
+            <a href="#servicios" class="block text-gray-200 font-medium py-2 border-b border-neutral-800">Servicios</a>
+            <a href="#guia-tecnica" class="block text-gray-200 font-medium py-2 border-b border-neutral-800">Tips & Mantenimiento</a>
+            <a href="#contacto" class="block text-gray-200 font-medium py-2">Contacto</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="https://wa.me/5491144720639?text=Hola!%20Consulta%20Celular%201" target="_blank"
+                   class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl text-center font-semibold text-xs flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Celular 1: +54 9 11 4472-0639
+                </a>
+                <a href="https://wa.me/5491122845098?text=Hola!%20Consulta%20Celular%202" target="_blank"
+                   class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl text-center font-semibold text-xs flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Celular 2: +54 9 11 2284-5098
+                </a>
+                <a href="https://instagram.com/rivadeoperfomance" target="_blank"
+                   class="w-full bg-neutral-800 border border-neutral-700 text-pink-400 py-2.5 rounded-xl text-center font-semibold text-sm flex items-center justify-center gap-2">
+                    <i class="fab fa-instagram text-lg"></i> Instagram @rivadeoperfomance
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="bg-carbon relative min-h-[85vh] flex items-center justify-center pt-10 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- HERO TEXT CONTENT -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/80 border border-red-700/50 text-red-400 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        <i class="fas fa-wrench"></i> Taller Mecánico Especializado Multimarca en Moreno
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        POTENCIA Y <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-600 to-red-400">RENDIMIENTO</span> PARA SU VEHÍCULO
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                        Servicio integral de mecánica para <strong class="text-white font-semibold">autos, camionetas, camiones y maquinaria vial</strong>. Atendemos todas las marcas, series y modelos con diagnóstico electrónico computarizado.
+                    </p>
+
+                    <!-- KEY FEATURE BULLETS -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm font-medium text-gray-300">
+                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-neutral-900/80 p-2.5 rounded-xl border border-neutral-800">
+                            <i class="fas fa-laptop-code text-red-500"></i>
+                            <span>Escaneo Digital</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-neutral-900/80 p-2.5 rounded-xl border border-neutral-800">
+                            <i class="fas fa-truck-pickup text-red-500"></i>
+                            <span>Línea Pesada & Vial</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-neutral-900/80 p-2.5 rounded-xl border border-neutral-800 col-span-2 sm:col-span-1">
+                            <i class="fas fa-shield-alt text-red-500"></i>
+                            <span>Todas las Marcas</span>
+                        </div>
+                    </div>
+
+                    <!-- HERO ACTION BUTTONS (DUAL NUMBERS) -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5491144720639?text=Hola%20FH%20Performance!%20Consulta%20a%20Celular%201" 
+                           target="_blank"
+                           class="w-full sm:w-auto px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-xs sm:text-sm tracking-wide shadow-xl shadow-emerald-900/40 flex items-center justify-center gap-3 transition-all duration-300 transform hover:-translate-y-0.5">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <div class="text-left">
+                                <div class="text-[10px] font-normal opacity-90">WHATSAPP CELULAR 1</div>
+                                <div class="font-extrabold">+54 9 11 4472-0639</div>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/5491122845098?text=Hola%20FH%20Performance!%20Consulta%20a%20Celular%202" 
+                           target="_blank"
+                           class="w-full sm:w-auto px-6 py-4 rounded-xl bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-bold text-xs sm:text-sm tracking-wide shadow-xl shadow-red-900/40 flex items-center justify-center gap-3 transition-all duration-300 transform hover:-translate-y-0.5">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <div class="text-left">
+                                <div class="text-[10px] font-normal opacity-90">WHATSAPP CELULAR 2</div>
+                                <div class="font-extrabold">+54 9 11 2284-5098</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HERO GRAPHIC CARD -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md bg-neutral-900/90 border border-neutral-800 rounded-3xl p-6 shadow-2xl backdrop-blur-xl">
+                        <div class="flex items-center justify-between border-b border-neutral-800 pb-4 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-red-950 border border-red-600/40 flex items-center justify-center text-red-500 text-lg">
+                                    <i class="fas fa-cog fa-spin" style="animation-duration: 8s;"></i>
+                                </div>
+                                <div>
+                                    <div class="font-heading font-bold text-white text-sm">FH PERFORMANCE</div>
+                                    <div class="text-[11px] text-red-400 font-semibold">TALLER MULTIMARCA</div>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 text-[10px] font-bold uppercase tracking-wider border border-emerald-800">
+                                Abierto
+                            </span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-car text-red-500 text-lg"></i>
+                                    <div>
+                                        <div class="text-xs font-semibold text-white">Autos y Camionetas</div>
+                                        <div class="text-[11px] text-gray-400">Motor, Frenos, Tren Delantero</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-truck text-amber-500 text-lg"></i>
+                                    <div>
+                                        <div class="text-xs font-semibold text-white">Camiones y Diésel</div>
+                                        <div class="text-[11px] text-gray-400">Inyección, Cajas, Neumática</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-tractor text-blue-500 text-lg"></i>
+                                    <div>
+                                        <div class="text-xs font-semibold text-white">Maquinaria Vial</div>
+                                        <div class="text-[11px] text-gray-400">Hidráulica y Calibración</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-neutral-800">
+                            <a href="https://instagram.com/rivadeoperfomance" target="_blank"
+                               class="w-full bg-gradient-to-r from-purple-900/40 via-pink-900/40 to-red-900/40 border border-pink-500/30 hover:border-pink-500 text-gray-200 p-3 rounded-xl flex items-center justify-between transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <i class="fab fa-instagram text-2xl text-pink-400 group-hover:scale-110 transition-transform"></i>
+                                    <div class="text-left">
+                                        <div class="text-xs font-bold text-white">Seguinos en Instagram</div>
+                                        <div class="text-[11px] text-pink-300">@rivadeoperfomance</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-xs text-pink-400 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="bg-neutral-950 border-y border-neutral-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800/80">
+                    <div class="text-2xl sm:text-3xl font-heading font-black text-red-500 mb-1">100%</div>
+                    <div class="text-xs font-medium text-gray-300 uppercase tracking-wider">Escaneo Computarizado</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800/80">
+                    <div class="text-xl sm:text-2xl font-heading font-black text-white mb-1">TODAS LAS MARCAS</div>
+                    <div class="text-xs font-medium text-gray-300 uppercase tracking-wider">Todas las Series y Modelos</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800/80">
+                    <div class="text-xl sm:text-2xl font-heading font-black text-red-500 mb-1">DIÉSEL / NAFTA</div>
+                    <div class="text-xs font-medium text-gray-300 uppercase tracking-wider">Livianos y Pesados</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800/80">
+                    <div class="text-xl sm:text-2xl font-heading font-black text-white mb-1">MORENO</div>
+                    <div class="text-xs font-medium text-gray-300 uppercase tracking-wider">Av. Libertador 3221</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS SECTION -->
+    <section id="nosotros" class="py-20 bg-neutral-900/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative bg-neutral-900 border border-neutral-800 rounded-3xl p-8 space-y-6">
+                        <div class="w-16 h-16 rounded-2xl bg-red-600/20 border border-red-600 flex items-center justify-center text-red-500 text-3xl">
+                            <i class="fas fa-users-gear"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white">HF / FH Performance</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Un taller mecánico con amplia trayectoria y respaldo técnico profesional. Nos dedicamos a mantener en óptimas condiciones desde vehículos particulares de uso diario hasta flota pesada y maquinaria de construcción.
+                        </p>
+                        <div class="border-t border-neutral-800 pt-4 space-y-3 text-xs text-gray-400">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check text-red-500"></i>
+                                <span>Repuestos de máxima durabilidad y mano de obra garantizada.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check text-red-500"></i>
+                                <span>Atención directa, rápida y transparente para cada cliente.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-red-500 text-sm font-bold tracking-widest uppercase">
+                        <span class="w-8 h-0.5 bg-red-600"></span> Quiénes Somos
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                        EXPERIENCIA, RAPIDEZ Y CONFIABILIDAD TÉCNICA
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        En <strong class="text-white">FH Performance Mecánica Automotriz</strong> atendemos todas las marcas y series (nafteros, diésel common rail e hidráulicos). Ofrecemos desde mantenimientos preventivos programados hasta reparaciones complejas de motores, cajas y diferenciales.
+                    </p>
+
+                    <div class="bg-gradient-to-r from-neutral-900 via-neutral-900 to-red-950/40 p-6 rounded-2xl border border-neutral-800 relative overflow-hidden">
+                        <h4 class="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-bullseye text-red-500"></i> Nuestro Compromiso
+                        </h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Garantizar el máximo rendimiento, confiabilidad y vida útil de cada vehículo o equipo que ingresa a nuestro taller en Moreno.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contact Badges (Dual Numbers) -->
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="https://wa.me/5491144720639" target="_blank" class="flex items-center gap-3 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 px-4 py-3 rounded-xl text-xs font-semibold text-gray-200">
+                            <i class="fab fa-whatsapp text-emerald-500 text-lg"></i>
+                            <span>Celular 1: +54 9 11 4472-0639</span>
+                        </a>
+                        <a href="https://wa.me/5491122845098" target="_blank" class="flex items-center gap-3 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 px-4 py-3 rounded-xl text-xs font-semibold text-gray-200">
+                            <i class="fab fa-whatsapp text-red-500 text-lg"></i>
+                            <span>Celular 2: +54 9 11 2284-5098</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicios" class="py-20 bg-carbon border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 text-red-500 text-sm font-bold tracking-widest uppercase">
+                    <span class="w-8 h-0.5 bg-red-600"></span> Especialidades del Taller <span class="w-8 h-0.5 bg-red-600"></span>
+                </div>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white">NUESTROS SERVICIOS INTEGRALES</h2>
+                <p class="text-gray-400 text-base">Atención técnica especializada en todas las marcas y series.</p>
+            </div>
+
+            <!-- LÍNEA LIVIANA -->
+            <div id="liviana" class="mb-16 scroll-mt-24">
+                <div class="flex items-center justify-between border-b border-neutral-800 pb-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-600 flex items-center justify-center text-red-500 text-xl font-bold">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-2xl font-bold text-white">Línea Liviana</h3>
+                            <p class="text-xs text-gray-400">Autos, SUVs, Utilitarios y Camionetas</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5491144720639?text=Hola!%20Consulta%20L%C3%ADnea%20Liviana" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-4 py-2 rounded-xl">
+                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp Celular 1
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-oil-can text-red-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Mantenimiento Preventivo y Correctivo</h4>
+                        <p class="text-gray-400 text-sm">Service programado, cambio de correa de distribución, bomba de agua y afinado.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-microchip text-red-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Diagnóstico Computarizado</h4>
+                        <p class="text-gray-400 text-sm">Escáneres multimarca para lectura de check engine, ABS, Airbag y reseteo de fallas.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-cogs text-red-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Motor, Caja y Tren Delantero</h4>
+                        <p class="text-gray-400 text-sm">Reparación de embragues, homocinéticas, amortiguadores y rectificación de motores.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-filter text-red-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Cambio de Aceite y Filtros</h4>
+                        <p class="text-gray-400 text-sm">Aceites sintéticos y semisintéticos para todas las especificaciones de fabricantes.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-compact-disc text-red-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Frenos y Embragues</h4>
+                        <p class="text-gray-400 text-sm">Cambio de pastillas, rectificado de discos y bombas de freno.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LÍNEA PESADA -->
+            <div id="pesada" class="mb-16 scroll-mt-24 pt-8 border-t border-neutral-800/60">
+                <div class="flex items-center justify-between border-b border-neutral-800 pb-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-600 flex items-center justify-center text-amber-500 text-xl font-bold">
+                            <i class="fas fa-truck-monster"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-2xl font-bold text-white">Línea Pesada & Maquinaria Vial</h3>
+                            <p class="text-xs text-gray-400">Camiones, Colectivos, Tractores y Equipos Viales</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5491122845098?text=Hola!%20Consulta%20L%C3%ADnea%20Pesada" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-bold text-red-400 bg-red-950/60 border border-red-800/80 px-4 py-2 rounded-xl">
+                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp Celular 2
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-gas-pump text-amber-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Motores Diésel y Sistemas Hidráulicos</h4>
+                        <p class="text-gray-400 text-sm">Reparación de motores diésel pesados, bombas hidráulicas y cilindros de presión.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-sliders-h text-amber-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Puesta a Punto de Inyección</h4>
+                        <p class="text-gray-400 text-sm">Inyección Common Rail, inyectores bomba y calibración de bombas inyectoras.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-truck-moving text-amber-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Cajas, Diferenciales y Frenos Neumáticos</h4>
+                        <p class="text-gray-400 text-sm">Servicio de transmisiones de alto torque y reparación de sistemas de aire compimido.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-bolt text-amber-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Electricidad Pesada 12V / 24V</h4>
+                        <p class="text-gray-400 text-sm">Alternadores, arrancadores y resolución de cortocircuitos en flotas comerciales.</p>
+                    </div>
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 card-hover">
+                        <i class="fas fa-hammer text-amber-500 text-2xl mb-4"></i>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Maquinaria Vial</h4>
+                        <p class="text-gray-400 text-sm">Calibración y preparación para excavadoras, palas cargadoras y retroexcavadoras.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OTROS SERVICIOS -->
+            <div class="pt-8 border-t border-neutral-800/60">
+                <h3 class="font-heading text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-toolbox text-blue-500"></i> Otros Servicios Especializados
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                    <div class="bg-neutral-950 border border-neutral-800 p-4 rounded-xl">
+                        <i class="fas fa-laptop text-red-500 text-xl mb-2"></i>
+                        <h5 class="text-xs font-bold text-white">Escaneo Computarizado</h5>
+                    </div>
+                    <div class="bg-neutral-950 border border-neutral-800 p-4 rounded-xl">
+                        <i class="fas fa-dharmachakra text-red-500 text-xl mb-2"></i>
+                        <h5 class="text-xs font-bold text-white">Alineación y Balanceo</h5>
+                    </div>
+                    <div class="bg-neutral-950 border border-neutral-800 p-4 rounded-xl">
+                        <i class="fas fa-snowflake text-red-500 text-xl mb-2"></i>
+                        <h5 class="text-xs font-bold text-white">Aire Acondicionado</h5>
+                    </div>
+                    <div class="bg-neutral-950 border border-neutral-800 p-4 rounded-xl">
+                        <i class="fas fa-fire text-red-500 text-xl mb-2"></i>
+                        <h5 class="text-xs font-bold text-white">Soldadura y Tornería</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUÍA TÉCNICA & TIPS DE MANTENIMIENTO SECTION -->
+    <section id="guia-tecnica" class="py-20 bg-neutral-950 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+                <div class="inline-flex items-center gap-2 text-red-500 text-sm font-bold tracking-widest uppercase">
+                    <span class="w-8 h-0.5 bg-red-600"></span> Centro de Conocimiento <span class="w-8 h-0.5 bg-red-600"></span>
+                </div>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white">GUÍA TÉCNICA & TIPS DE MANTENIMIENTO</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Recomendaciones profesionales de nuestros mecánicos para prolongar la vida útil de su vehículo o maquinaria.</p>
+            </div>
+
+            <!-- TABS -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+                <button onclick="switchTipTab('autos')" id="tab-btn-autos" class="tip-tab-btn active bg-red-600 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl border border-red-500 transition-all flex items-center gap-2">
+                    <i class="fas fa-car"></i> Autos & SUVs
+                </button>
+                <button onclick="switchTipTab('camionetas')" id="tab-btn-camionetas" class="tip-tab-btn bg-neutral-900 text-gray-300 hover:text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl border border-neutral-800 transition-all flex items-center gap-2">
+                    <i class="fas fa-truck-pickup"></i> Camionetas & Utilitarios
+                </button>
+                <button onclick="switchTipTab('camiones')" id="tab-btn-camiones" class="tip-tab-btn bg-neutral-900 text-gray-300 hover:text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl border border-neutral-800 transition-all flex items-center gap-2">
+                    <i class="fas fa-truck"></i> Camiones & Pesados
+                </button>
+                <button onclick="switchTipTab('maquinaria')" id="tab-btn-maquinaria" class="tip-tab-btn bg-neutral-900 text-gray-300 hover:text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl border border-neutral-800 transition-all flex items-center gap-2">
+                    <i class="fas fa-tractor"></i> Maquinaria Vial
+                </button>
+            </div>
+
+            <!-- CONTENTS -->
+            <div id="tip-tab-autos" class="tip-content grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Mantenimiento Preventivo</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Evitar Roturas Severas</h4>
+                    <p class="text-xs text-gray-300">Cambiar aceite y filtros cada 10.000 km previene el desgaste prematuro. El service preventivo cuesta hasta 10 veces menos que reparar un motor agarrado.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Lubricación</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Tipos de Aceite de Motor</h4>
+                    <p class="text-xs text-gray-300"><strong>5W-30 / 5W-40 Sintético:</strong> Recomendado para motores modernos turbo.<br><strong>10W-40 Semisintético:</strong> Ideal para uso diario estándar.<br><strong>15W-40 Mineral:</strong> Para motores clásicos o con alto kilometraje.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Sistema de Freno</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Líquido y Pastillas</h4>
+                    <p class="text-xs text-gray-300">Controlar el espesor de pastillas cada 15.000 km y reemplazar el líquido de frenos DOT 4 cada 2 años para evitar humedad en el circuito.</p>
+                </div>
+            </div>
+
+            <div id="tip-tab-camionetas" class="tip-content hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Diésel Common Rail</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Filtros de Combustible</h4>
+                    <p class="text-xs text-gray-300">Las inyecciones modernas sufren mucho con el agua y las impurezas. Reemplazar el filtro de gasoil cada 10.000 km protege inyectores y bomba de alta presión.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Transmisión 4x4</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Diferenciales y Cajas</h4>
+                    <p class="text-xs text-gray-300">Controlar lubricante SAE 75W-90 / 80W-90 en diferenciales traseros y delanteros. Si vadéas agua, reemplazar el fluido inmediatamente.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Carga & Suspensión</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Bujes y Elásticos</h4>
+                    <p class="text-xs text-gray-300">La carga constante desgasta bujes de parrilla y elásticos. Mantener la alineación evita la destrucción prematura de los neumáticos.</p>
+                </div>
+            </div>
+
+            <div id="tip-tab-camiones" class="tip-content hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Línea Pesada</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Aceite Heavy Duty 15W-40</h4>
+                    <p class="text-xs text-gray-300">Utilizar aceites con norma API CK-4 / CJ-4 específicos para controlar hollín y soportar altas temperaturas durante largas jornadas de ruta.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Neumática</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Frenos de Aire y Secadores</h4>
+                    <p class="text-xs text-gray-300">Cambiar el cartucho del filtro secador de aire 1 vez al año para impedir que el agua arruine las válvulas distribuidoras y pulmones de freno.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Electricidad</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Circuitos de 24 Volts</h4>
+                    <p class="text-xs text-gray-300">Mantener bornes limpios y verificar el balance de baterías en serie para evitar quemar computadoras de a bordo.</p>
+                </div>
+            </div>
+
+            <div id="tip-tab-maquinaria" class="tip-content hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Hidráulica Vial</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Aceites ISO VG 46 y 68</h4>
+                    <p class="text-xs text-gray-300">El aceite hidráulico debe filtrarse periódicamente. Utilizar ISO VG 46 en uso normal o ISO VG 68 en climas cálidos de alta exigencia.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Chasis & Pernos</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Engrase Litado EP2</h4>
+                    <p class="text-xs text-gray-300">Engrasar diariamente bujes y pernos de cuchara/brazo. La falta de lubricación provoca desgaste de alojamientos y costosos trabajos de tornería.</p>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-3">
+                    <div class="text-xs font-bold text-red-500 uppercase">Puesta a Punto</div>
+                    <h4 class="font-heading font-bold text-lg text-white">Calibración de Presiones</h4>
+                    <p class="text-xs text-gray-300">Verificar la presión de alivio con manómetros para no forzar la bomba principal de bombas hidráulicas en retroexcavadoras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COTIZADOR RÁPIDO -->
+    <section class="py-16 bg-neutral-950 border-t border-neutral-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="px-3 py-1 rounded-full bg-red-950 border border-red-800 text-red-400 text-xs font-bold uppercase">Cotizador Rápido</span>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">Consulte Presupuesto Directo</h3>
+                </div>
+
+                <form onsubmit="handleCalculatorSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Tipo de Vehículo</label>
+                            <select id="calc-vehicle" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-red-600">
+                                <option value="Auto / SUV (Línea Liviana)">Auto / SUV / Utilitario</option>
+                                <option value="Camión / Colectivo (Línea Pesada)">Camión / Colectivo (Línea Pesada)</option>
+                                <option value="Maquinaria Vial">Maquinaria Vial / Tractor</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Servicio Requerido</label>
+                            <select id="calc-service" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-red-600">
+                                <option value="Escaneo Computarizado">Escaneo Computarizado</option>
+                                <option value="Mantenimiento de Motor">Mantenimiento de Motor / Caja</option>
+                                <option value="Frenos o Embrague">Frenos / Embrague</option>
+                                <option value="Sistema Hidráulico / Diésel">Sistema Hidráulico / Inyección Diésel</option>
+                                <option value="Cambio de Aceite y Filtros">Cambio de Aceite y Filtros</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Marca / Modelo / Serie</label>
+                        <input type="text" id="calc-details" placeholder="Ej: Toyota Hilux 2020 / Mercedes-Benz 1634 / etc." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-red-600">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 text-white font-bold py-4 rounded-xl text-sm uppercase flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i> Enviar Mensaje por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO & MAPA -->
+    <section id="contacto" class="py-20 bg-carbon border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 text-red-500 text-sm font-bold tracking-widest uppercase">
+                    <span class="w-8 h-0.5 bg-red-600"></span> Canales Directos <span class="w-8 h-0.5 bg-red-600"></span>
+                </div>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white">CONTACTO & UBICACIÓN</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl flex items-start gap-4">
+                        <i class="fas fa-location-dot text-red-500 text-2xl"></i>
+                        <div>
+                            <div class="text-xs font-bold text-gray-400 uppercase">Dirección</div>
+                            <div class="font-heading font-bold text-white">Av. Libertador 3221, Moreno, Buenos Aires</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl space-y-3">
+                        <div class="text-xs font-bold text-gray-400 uppercase">Teléfonos / WhatsApp</div>
+                        <a href="https://wa.me/5491144720639" target="_blank" class="flex items-center gap-3 text-emerald-400 font-bold">
+                            <i class="fab fa-whatsapp text-xl"></i> Celular 1: +54 9 11 4472-0639
+                        </a>
+                        <a href="https://wa.me/5491122845098" target="_blank" class="flex items-center gap-3 text-red-400 font-bold">
+                            <i class="fab fa-whatsapp text-xl"></i> Celular 2: +54 9 11 2284-5098
+                        </a>
+                    </div>
+
+                    <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl flex items-start gap-4">
+                        <i class="fas fa-envelope text-red-500 text-2xl"></i>
+                        <div>
+                            <div class="text-xs font-bold text-gray-400 uppercase">Correo Electrónico</div>
+                            <div class="font-heading font-bold text-white break-all">rivadeodanielhoracio63@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-instagram text-pink-500 text-2xl"></i>
+                            <div>
+                                <div class="text-xs font-bold text-gray-400 uppercase">Instagram</div>
+                                <div class="font-heading font-bold text-white">@rivadeoperfomance</div>
+                            </div>
+                        </div>
+                        <a href="https://instagram.com/rivadeoperfomance" target="_blank" class="bg-pink-600 text-white px-4 py-2 rounded-xl text-xs font-bold">Seguir</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden min-h-[400px]">
+                    <iframe title="Ubicacion Taller FH Performance" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.456!2d-58.789!3d-34.649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM4JzU2LjQiUyA1OMKwNDcnMjAuNCJX!5e0!3m2!1ses-419!2sar!4v1680000000000!5m2!1ses-419!2sar" class="w-full h-full min-h-[400px] border-0 filter grayscale opacity-90 hover:grayscale-0 transition-all duration-500" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-neutral-800 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center sm:text-left sm:flex sm:items-center sm:justify-between text-xs space-y-4 sm:space-y-0">
+            <div>&copy; <span id="year-span"></span> FH Performance Mecánica Automotriz. Moreno, Buenos Aires.</div>
+            <div class="flex justify-center gap-4">
+                <a href="https://wa.me/5491144720639" target="_blank" class="hover:text-white">Cel 1: +54 9 11 4472-0639</a>
+                <a href="https://wa.me/5491122845098" target="_blank" class="hover:text-white">Cel 2: +54 9 11 2284-5098</a>
+                <a href="https://instagram.com/rivadeoperfomance" target="_blank" class="hover:text-white">@rivadeoperfomance</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET FLOTANTE WHATSAPP -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <div id="whatsapp-popup" class="hidden flex-col gap-2 bg-neutral-900 border border-neutral-800 p-3 rounded-2xl shadow-2xl mb-1 w-72">
+            <div class="text-xs font-bold text-white mb-1 flex items-center justify-between border-b border-neutral-800 pb-2">
+                <span>Seleccionar Celular de Contacto</span>
+                <button onclick="toggleWhatsAppMenu()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <a href="https://wa.me/5491144720639?text=Hola!%20Consulta%20a%20Celular%201" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-emerald-950/80 border border-emerald-800/80 text-emerald-300 hover:bg-emerald-900 text-xs font-semibold">
+                <i class="fab fa-whatsapp text-xl shrink-0"></i>
+                <div>
+                    <div>Celular 1: +54 9 11 4472-0639</div>
+                    <div class="text-[10px] text-emerald-400 font-normal">Línea Liviana / General</div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/5491122845098?text=Hola!%20Consulta%20a%20Celular%202" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-red-950/80 border border-red-800/80 text-red-300 hover:bg-red-900 text-xs font-semibold">
+                <i class="fab fa-whatsapp text-xl shrink-0"></i>
+                <div>
+                    <div>Celular 2: +54 9 11 2284-5098</div>
+                    <div class="text-[10px] text-red-400 font-normal">Línea Pesada / Maquinaria</div>
+                </div>
+            </a>
+        </div>
+
+        <button onclick="toggleWhatsAppMenu()" class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-2xl flex items-center justify-center text-3xl border-2 border-white/20">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const yearSpan = document.getElementById('year-span');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        function toggleWhatsAppMenu() {
+            const popup = document.getElementById('whatsapp-popup');
+            if (popup) {
+                popup.classList.toggle('hidden');
+                popup.classList.toggle('flex');
+            }
+        }
+
+        function switchTipTab(category) {
+            document.querySelectorAll('.tip-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tip-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-red-600', 'text-white', 'border-red-500');
+                btn.classList.add('bg-neutral-900', 'text-gray-300', 'border-neutral-800');
+            });
+
+            const activeContent = document.getElementById(`tip-tab-${category}`);
+            if (activeContent) activeContent.classList.remove('hidden');
+
+            const activeBtn = document.getElementById(`tab-btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-neutral-900', 'text-gray-300', 'border-neutral-800');
+                activeBtn.classList.add('bg-red-600', 'text-white', 'border-red-500');
+            }
+        }
+
+        function handleCalculatorSubmit(event) {
+            event.preventDefault();
+            const vehicle = document.getElementById('calc-vehicle').value;
+            const service = document.getElementById('calc-service').value;
+            const details = document.getElementById('calc-details').value.trim();
+
+            let message = `Hola FH Performance! Quisiera consultar presupuesto para:\n- Vehículo: ${vehicle}\n- Servicio: ${service}`;
+            if (details) message += `\n- Detalle/Marca/Serie: ${details}`;
+
+            const phone = vehicle.includes('Pesada') ? "5491122845098" : "5491144720639";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
